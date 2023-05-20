@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .room {
+    width: 1800px;
+    height: 950px;
+    border: 10px solid #000;
+    position: relative;
+    margin: 50px auto;
+    background-color: #000000;
+  }
+  
+  .sala2 {
+    width: 50px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    right: 0;
+    top: 80%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .sala3 {
+    width: 50px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    right: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+  .book {
+    background-image: url('../imgs/bookBEFOR.png');
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 50%;
+    bottom: 40%;
+    transform: translate(50%, 50%);
+    z-index: 2;
+  }
+  .book2 {
+    background-image: url('../imgs/bookBEFOR.png');
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 80%;
+    bottom: 60%;
+    transform: translate(50%, 50%);
+    z-index: 2;
+  }
+  .book3 {
+    background-image: url('../imgs/bookBEFOR.png');
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 30%;
+    bottom: 60%;
+    transform: translate(50%, 50%);
+    z-index: 2;
+  }
+
+  .dica {
+    background-image: url('../imgs/idea.png');
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    transform: translate(50%, 50%);
+    z-index: 2;
+  }
+
+
+  .time{
+    width: 100px;
+    height:50px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+    right: 10%;
+    bottom: 90%;
+    transform: translate(50%, 50%);
+    border-radius: 50%;
+    font-weight:bold;
+    font-size: 35px;
+    text-align: center;
+  }
+  
+  .key {
+    width: 100px;
+    height: 30px;
+    border-radius: 15%;
+    background: #f90;
+    position: absolute;
+    right: 95%;
+    bottom: 95%;
+    transform: translate(100%, 100%);
+    z-index: 3;
+    display: block;
+    text-align: center;
+  }
+  
+  
+  .modal {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    background-color: rgb(80, 75, 75);
+    width: 1040px;
+    height: 200px;
+    z-index: 999;
+  }
+
+  #text{
+    text-align: center;
+    color: white;
+    font-size: 25px;
+  }
+
+  #title{
+    text-align: center;
+    color: white;
+  }
+
+  #answers{
+    text-align: center;
+    color:white;
+    bottom: 20%;
+  }
+
+  #closeDialog{
+    position: absolute;
+    right: 8%;
+    bottom: 88%;
+    color:white;
+  }
+
+  .modal2 {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    background-color: rgb(80, 75, 75);
+    width: 1040px;
+    height: 400px;
+    z-index: 999;
+  }
+  
+  #text2{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+  }
