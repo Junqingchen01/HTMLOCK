@@ -1,7 +1,7 @@
 const questions = [
   {
     text: "What tags do HTML elements start and end with?",
-    answers: ['<start>, </end>', '<start>, </stop>', '<start>, </start>'],
+    answers: ['start, /end', 'start, /stop', 'start, /start'],
     solution: 2
   },
   {
@@ -50,7 +50,7 @@ var x = setInterval(function() {
     clearInterval(x);
     document.querySelector(".time").innerHTML = "0s";
     alert("TIME UP! PLEASE TRY AGAIN !");
-    location.href='index.html';
+    location.href='homepage.html';
   }
 }, 1000);
 
@@ -105,7 +105,7 @@ function creatTutorial() {
     HTML tags can define the structure and style of text, such as headings, paragraphs, and links.<br>
     HTML also supports the use of CSS styles and JavaScript scripts to enhance the functionality and appearance of web pages.<br>
 
-    I hope it is helpful to you!<br>
+    Is may be helpful<br>
     
     </p>
     <br>
