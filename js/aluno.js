@@ -1,31 +1,30 @@
-
 const Users = [
     {
       nome:"Chen",
       username:"User",
       password:"user",
       dataNascimento:"2000-0-0",
-      sex0:"F",
+      sexo:"F",
       locallidade:"vila do conde",
-      emial:"123456789@gmail.com"
+      email:"123456789@gmail.com"
     },
     {
         nome:"Admin",
         username:"Admin",
         password:"admin",
         dataNascimento:"2000-0-0",
-        sex0:"M",
+        sexo:"M",
         locallidade:"vila do conde",
-        emial:"123456789@gmail.com"
+        email:"123456789@gmail.com"
     },
     {
         nome:"Manu",
         username:"user2",
         password:"user",
         dataNascimento:"2000-0-0",
-        sex0:"F",
+        sexo:"F",
         locallidade:"vila do conde",
-        emial:"123456789@gmail.com"
+        email:"123456789@gmail.com"
     }
   ];
   

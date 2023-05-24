@@ -16,6 +16,9 @@ const questions = [
   }
 ];
 
+alert('welcome to 1º room, find keys and try leave the room before the time up!!')
+
+
 let question
 console.log("Number of questions: "+questions.length)
 
@@ -58,7 +61,10 @@ var x = setInterval(function() {
 // Add event listener to the door
 sala2.addEventListener("click", () => {
   // Check if the door is open
-  if (OpenDoor === true) {
+  const Opened = localStorage.getItem("Opened");
+  if (Opened === "true"  || OpenDoor === true) {
+    sala2.style.backgroundColor = "green";
+    sala3.style.backgroundColor = "green";
     alert("Vai entrar sala2...");
     location.href='sala2.html'
   } else {
@@ -68,7 +74,10 @@ sala2.addEventListener("click", () => {
 
 sala3.addEventListener("click", () => {
   // Check if the door is open
-  if (OpenDoor === true) {
+  const Opened = localStorage.getItem("Opened");
+  if (Opened === "true"  || OpenDoor === true) {
+    sala2.style.backgroundColor = "green";
+    sala3.style.backgroundColor = "green";
     alert("Vai entrar sala3...");
     location.href='sala3.html'
   } else {
@@ -111,14 +120,9 @@ function creatTutorial() {
     <br>
   `;
   document.body.appendChild(newDialog);
-
-  // Add event listener to the close button
   const closeButton = newDialog.querySelector("#closeDialog");
   closeButton.addEventListener("click", ()=>{newDialog.open = false}
-  //closeDialog()
   );
-
-  // Open the new dialog
   newDialog.open = true;
 }
 
@@ -184,6 +188,7 @@ if(NumeroKey === questions.length){
   sala2.style.backgroundColor = "green";
   sala3.style.backgroundColor = "green";
   OpenDoor = true;
+  localStorage.setItem("Opened",true);
   
 }else if(NumeroKey === 0){
   alert("Looks like I need to keep exploring this room...  ")

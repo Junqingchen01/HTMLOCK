@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/sala2.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>sala 2</h1>
+    <div class="room">
+        <h1 class="h1">SALA 2</h1>
+        <div class="sala1">Sala1</div>
+        <div class="book"></div>
+        <div class="book2"></div>
+        <div class="book3"></div>
+        <div class="dica"></div>
+        <div class="key">?</div>
+        <div id ="demo" class="time"></div>
+        <div class="NumeroKeys"></div>
+    </div>
+
+    <dialog class="modal">
+        <p id="title">What happens if I get it right. . .</p><br>
+        <p id="closeDialog">X</p>
+        <p id="text"></p><br>
+        <p id="answers">
+          <form id="answers">
+          <input type="radio" value="0" name="answers"> <span id="answer1"></span><br>
+          <input type="radio" value="1" name="answers"> <span id="answer2"></span><br>
+          <input type="radio" value="2" name="answers"> <span id="answer3"></span><br>
+          </form>
+        </p>
+    </dialog>
+
+    <script src="../js/sala2.js"></script>
 </body>
 </html>
