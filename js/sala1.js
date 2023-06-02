@@ -1,3 +1,4 @@
+
 const questions = [
   {
     text: "What tags do HTML elements start and end with?",
@@ -15,8 +16,6 @@ const questions = [
     solution: 2
   }
 ];
-
-alert('welcome to 1º room, find keys and try leave the room before the time up!!')
 
 
 let question
@@ -36,18 +35,18 @@ const book3 = document.querySelector(".book3");
 const dica = document.querySelector(".dica");
 
 let OpenDoor = false;
-console.log("opendoor :"+OpenDoor);
 
 // count keys 
 let NumeroKey = 0;
-console.log("key" + NumeroKey);
+
 
 //count time W3S
 let timeLeft = 200;
 
+
 var x = setInterval(function() {
   let left = --timeLeft;
-
+  // console.log(timeLeft)
   document.querySelector(".time").innerHTML = left + "s ";
   if (left < 0) {
     clearInterval(x);
@@ -61,8 +60,8 @@ var x = setInterval(function() {
 // Add event listener to the door
 sala2.addEventListener("click", () => {
   // Check if the door is open
-  const Opened = localStorage.getItem("Opened");
-  if (Opened === "true"  || OpenDoor === true) {
+  let Opened = localStorage.getItem("Opened");
+  if (Opened === "true") {
     sala2.style.backgroundColor = "green";
     sala3.style.backgroundColor = "green";
     alert("Vai entrar sala2...");
@@ -74,8 +73,8 @@ sala2.addEventListener("click", () => {
 
 sala3.addEventListener("click", () => {
   // Check if the door is open
-  const Opened = localStorage.getItem("Opened");
-  if (Opened === "true"  || OpenDoor === true) {
+  let Opened = localStorage.getItem("Opened");
+  if (Opened === "true") {
     sala2.style.backgroundColor = "green";
     sala3.style.backgroundColor = "green";
     alert("Vai entrar sala3...");
@@ -159,7 +158,7 @@ for (const answer of answers) {
 
 function checkSuccess(event) {
 if (event.target.value == question.solution) {
-  alert("PARABÉNS, GANHASTE UMA CHAVE");
+  alert("Good! you get a key !");
   NumeroKey++;
   checkKeys()
   console.log("key" + NumeroKey);
@@ -171,11 +170,11 @@ if (event.target.value == question.solution) {
   clickbook.removeEventListener("click", handleBookClick3);
 
   clickbook.addEventListener("click", () => {
-    alert("Ja ler nest book!");
+    alert("This book is done, i have to find others... ");
   });
 
 } else {
-  alert("FALHASTE, TENTA NOVAMENTE");
+  alert("False, try again !");
 }
 dialog.querySelector("form").reset();
 dialog.close();
@@ -183,12 +182,20 @@ dialog.close();
 
 function checkKeys(){
 if(NumeroKey === questions.length){
+
+  // marcar o resto tempo para registar no perfil de user para entrar o rank
+  let timeUser = 0;
+  timeUser+= timeLeft;
+  console.log("time win:"+timeUser)
+
   clearInterval(x);
   alert("Looks like I can get out of this room now..which door should i go ....")
   sala2.style.backgroundColor = "green";
   sala3.style.backgroundColor = "green";
+
   OpenDoor = true;
   localStorage.setItem("Opened",true);
+  console.log("Opendoor: "+ OpenDoor)
   
 }else if(NumeroKey === 0){
   alert("Looks like I need to keep exploring this room...  ")
@@ -203,3 +210,17 @@ close.addEventListener("click",closeDialog);
 function closeDialog(){
 dialog.open = false
 }
+
+function welcome(){
+  let Opened = localStorage.getItem("Opened");
+  if(Opened === "true"){
+    sala2.style.backgroundColor = "green";
+    sala3.style.backgroundColor = "green";
+    alert('welcome again, now whice door should i select ?')
+  }
+  else{
+    alert('welcome to 1º room, find keys and try leave the room before the time up!!')
+  }
+}
+
+welcome()

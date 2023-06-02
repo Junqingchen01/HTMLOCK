@@ -1,16 +1,16 @@
 const questions = [
     {
-      text: "What tag is used to define a table cell in HTML?",
+      text: "What tag is used to define a table CELL in HTML?",
       answers: ["td", "tr", "th"],
       solution: 0
     },
     {
-      text: "Which tag is used to define a table row in HTML?",
+      text: "Which tag is used to define a table ROW in HTML?",
       answers: ["td", "tr", "th"],
       solution: 1
     },
     {
-      text: "What tag is used to define a table header cell in HTML?",
+      text: "What tag is used to define a table HEADER CELL in HTML?",
       answers: ["td", "tr", "th"],
       solution: 2
     }
