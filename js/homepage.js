@@ -38,5 +38,9 @@ function toRank(){
     rankbtn.onclick = location.href = "../html/rank.html";
 }
 
+function toPerfil(){
+    location.href = "../html/perfil.html";
+}
+
 ifAdmin()
 ifLogin()
