@@ -17,8 +17,6 @@ const questions = [
   ];
   
 
-  alert('welcome to 2º room, find keys and try leave the room before the time up!!')
-
 let question
 let OpenDoor = false;
 console.log("opendoor :"+OpenDoor);
@@ -183,3 +181,17 @@ function creatTutorial() {
     function closeDialog(){
     dialog.open = false
     }
+
+    function welcome(){
+      let Opened = localStorage.getItem("Openedsala2");
+      if(Opened === "true"){
+        sala1.style.backgroundColor = "green";
+        clearInterval(x);
+        alert('welcome again,looks i cant get out by this room, have to find out other way')
+      }
+      else{
+        alert('welcome to 1º room, find keys and try leave the room before the time up!!')
+      }
+    }
+    
+    welcome()

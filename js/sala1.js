@@ -67,7 +67,7 @@ sala2.addEventListener("click", () => {
     alert("Vai entrar sala2...");
     location.href='sala2.html'
   } else {
-    alert("ENCONTRA PRIMEIRO A CHAVE!!");
+    alert("I CANT OPENT THIS DOOR NOW !!");
   }
 });
 
@@ -80,7 +80,7 @@ sala3.addEventListener("click", () => {
     alert("Vai entrar sala3...");
     location.href='sala3.html'
   } else {
-    alert("ENCONTRA PRIMEIRO A CHAVE!!");
+    alert("I CANT OPENT THIS DOOR NOW !!");
   }
 });
 
@@ -161,7 +161,6 @@ if (event.target.value == question.solution) {
   alert("Good! you get a key !");
   NumeroKey++;
   checkKeys()
-  console.log("key" + NumeroKey);
   document.querySelector(".key").innerHTML = "Keys: " + NumeroKey;
   clickbook.style.backgroundImage = "url('../imgs/bookafter.png')"
   //da para melhorar
@@ -187,15 +186,17 @@ if(NumeroKey === questions.length){
   let timeUser = 0;
   timeUser+= timeLeft;
   console.log("time win:"+timeUser)
+  localStorage.setItem("timeWin", timeUser);
 
   clearInterval(x);
+
   alert("Looks like I can get out of this room now..which door should i go ....")
   sala2.style.backgroundColor = "green";
   sala3.style.backgroundColor = "green";
 
   OpenDoor = true;
   localStorage.setItem("Opened",true);
-  console.log("Opendoor: "+ OpenDoor)
+  // console.log("Opendoor: "+ OpenDoor)
   
 }else if(NumeroKey === 0){
   alert("Looks like I need to keep exploring this room...  ")
@@ -216,6 +217,7 @@ function welcome(){
   if(Opened === "true"){
     sala2.style.backgroundColor = "green";
     sala3.style.backgroundColor = "green";
+    clearInterval(x);
     alert('welcome again, now whice door should i select ?')
   }
   else{

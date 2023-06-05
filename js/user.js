@@ -1,5 +1,16 @@
-class UserManager {
-  constructor() {
+export class UserManager {
+  #nome;#username;#password;#dataNascimento;#sexo;#localidade;#email;#tempofalta;
+
+  constructor(nome,username,password,dataNascimento,sexo,localidade,email,tempofalta) {
+    this.nome=nome;
+    this.username=username;
+    this.password=password;
+    this.dataNascimento=dataNascimento;
+    this.sexo=sexo;
+    this.localidade=localidade;
+    this.email=email;
+    this.tempofalta=tempofalta;
+
     this.users = [
       {
         nome: "Chen",
@@ -9,7 +20,7 @@ class UserManager {
         sexo: "F",
         localidade: "vila do conde",
         email: "123456789@gmail.com",
-        tempofalta: 0,
+        tempofalta: 5,
       },
       {
         nome: "Admin",
@@ -19,7 +30,7 @@ class UserManager {
         sexo: "M",
         localidade: "vila do conde",
         email: "123456789@gmail.com",
-        tempofalta: 0,
+        tempofalta: 1,
       },
       {
         nome: "Manu",
@@ -29,7 +40,7 @@ class UserManager {
         sexo: "F",
         localidade: "vila do conde",
         email: "123456789@gmail.com",
-        tempofalta: 0,
+        tempofalta: 2,
       },
     ];
   }
@@ -40,7 +51,13 @@ class UserManager {
         this.users[i].username === username &&
         this.users[i].password === password
       ) {
+        
+        localStorage.setItem("UserInfo", JSON.stringify(this.users[i]));
         localStorage.setItem("UserLogado", this.users[i].nome);
+
+        const nomelista = this.users.map(user => user.nome);
+        localStorage.setItem("usersLista", JSON.stringify(nomelista));
+
         alert("Login successful!");
         location.href = "../html/homepage.html";
         return;
@@ -51,6 +68,7 @@ class UserManager {
 
   addUser(user) {
     this.users.push(user);
+    alert("register successful!");
   }
 
   removeUser(username) {
@@ -62,10 +80,9 @@ class UserManager {
       console.log(`User ${username} not found.`);
     }
   }
-
 }
 
 
-
-
-
+function Login(){
+  UserManager.login()
+}
