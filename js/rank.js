@@ -9,6 +9,6 @@ const rankList = document.getElementById('rankList');
 
 users.forEach(user => {
   const li = document.createElement('li');
-  li.textContent = `NOME:  ${user.nome},    TEMPO FALTA: ${user.tempofalta}`;
+  li.textContent = `NOME:  ${user.nome},    TEMPO GANHA:   ${user.tempofalta} S.`;
   rankList.appendChild(li);
 });

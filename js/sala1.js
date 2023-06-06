@@ -128,15 +128,34 @@ function creatTutorial() {
 let clickbook
 function handleBookClick1() { 
 clickbook = book
-renderDialog();
+let Opened = localStorage.getItem("Opened")
+  if(Opened === "true"){
+    dialog.open = false;
+    alert("This book is done, I have to find others...");
+}else{
+  renderDialog();
+}
 }
 function handleBookClick2() { 
 clickbook = book2
-renderDialog();
+
+let Opened = localStorage.getItem("Opened")
+  if(Opened === "true"){
+    dialog.open = false;
+    alert("This book is done, I have to find others...");
+}else{
+  renderDialog();
+}
 }
 function handleBookClick3() { 
 clickbook = book3
-renderDialog();
+let Opened = localStorage.getItem("Opened")
+  if(Opened === "true"){
+    dialog.open = false;
+    alert("This book is done, I have to find others...");
+}else{
+  renderDialog();
+}
 }
 
 
@@ -183,10 +202,10 @@ function checkKeys(){
 if(NumeroKey === questions.length){
 
   // marcar o resto tempo para registar no perfil de user para entrar o rank
-  let timeUser = 0;
-  timeUser+= timeLeft;
-  console.log("time win:"+timeUser)
-  localStorage.setItem("timeWin", timeUser);
+  let timewin1 = 0;
+  timewin1+= timeLeft;
+  console.log("time win in sala1:"+timewin1)
+  localStorage.setItem("timeWin1", timewin1);
 
   clearInterval(x);
 
@@ -224,5 +243,4 @@ function welcome(){
     alert('welcome to 1º room, find keys and try leave the room before the time up!!')
   }
 }
-
 welcome()

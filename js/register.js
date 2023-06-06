@@ -13,7 +13,7 @@ function register() {
   const sexo = document.getElementById("sexo").value;
   const localidade = document.getElementById("localidade").value;
   const email = document.getElementById("email").value;
-  const tempofalta = 0;
+  const timewin = 0;
 
   const user = {
     nome: nome,
@@ -23,7 +23,7 @@ function register() {
     sexo: sexo,
     localidade: localidade,
     email: email,
-    tempofalta: tempofalta,
+    timewin: timewin,
 };
 
   userManager.addUser(user);

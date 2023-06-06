@@ -106,15 +106,33 @@ function creatTutorial() {
   let clickbook
   function handleBookClick1() { 
   clickbook = book
+  let Openedsala2 = localStorage.getItem("Openedsala2")
+  if(Openedsala2 === "true"){
+    dialog.open = false;
+    alert("This book is done, I have to find others...");
+}else{
   renderDialog();
+}
   }
   function handleBookClick2() { 
   clickbook = book2
+  let Openedsala2 = localStorage.getItem("Openedsala2")
+  if(Openedsala2 === "true"){
+    dialog.open = false;
+    alert("This book is done, I have to find others...");
+}else{
   renderDialog();
+}
   }
   function handleBookClick3() { 
   clickbook = book3
+  let Openedsala2 = localStorage.getItem("Openedsala2")
+  if(Openedsala2 === "true"){
+    dialog.open = false;
+    alert("This book is done, I have to find others...");
+}else{
   renderDialog();
+}
   }
   
   function renderDialog() {
@@ -161,6 +179,12 @@ function creatTutorial() {
 
     function checkKeys(){
     if(NumeroKey === questions.length){
+
+      let timewin2 = 0;
+      timewin2+= timeLeft;
+      console.log("time win in sala2:"+timewin2)
+      localStorage.setItem("timeWin2", timewin2);
+
       clearInterval(x);
       alert("Looks like I can get out of this room now..which door should i go ....")
       sala1.style.backgroundColor = "green";
@@ -186,12 +210,14 @@ function creatTutorial() {
       let Opened = localStorage.getItem("Openedsala2");
       if(Opened === "true"){
         sala1.style.backgroundColor = "green";
+        
         clearInterval(x);
         alert('welcome again,looks i cant get out by this room, have to find out other way')
       }
       else{
-        alert('welcome to 1º room, find keys and try leave the room before the time up!!')
+        alert('welcome to 2º room, find keys and try leave the room before the time up!!')
       }
     }
     
     welcome()
+  

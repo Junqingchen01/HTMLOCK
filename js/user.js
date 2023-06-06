@@ -1,7 +1,7 @@
 export class UserManager {
-  #nome;#username;#password;#dataNascimento;#sexo;#localidade;#email;#tempofalta;
+  #nome;#username;#password;#dataNascimento;#sexo;#localidade;#email;#timewin;
 
-  constructor(nome,username,password,dataNascimento,sexo,localidade,email,tempofalta) {
+  constructor(nome,username,password,dataNascimento,sexo,localidade,email,timewin) {
     this.nome=nome;
     this.username=username;
     this.password=password;
@@ -9,7 +9,7 @@ export class UserManager {
     this.sexo=sexo;
     this.localidade=localidade;
     this.email=email;
-    this.tempofalta=tempofalta;
+    this.timewin=timewin;
 
     this.users = [
       {
@@ -20,7 +20,7 @@ export class UserManager {
         sexo: "F",
         localidade: "vila do conde",
         email: "123456789@gmail.com",
-        tempofalta: 5,
+        timewin: 5,
       },
       {
         nome: "Admin",
@@ -30,7 +30,7 @@ export class UserManager {
         sexo: "M",
         localidade: "vila do conde",
         email: "123456789@gmail.com",
-        tempofalta: 1,
+        timewin: 1,
       },
       {
         nome: "Manu",
@@ -40,7 +40,7 @@ export class UserManager {
         sexo: "F",
         localidade: "vila do conde",
         email: "123456789@gmail.com",
-        tempofalta: 2,
+        timewin: 2,
       },
     ];
   }

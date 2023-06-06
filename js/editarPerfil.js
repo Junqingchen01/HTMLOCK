@@ -1,6 +1,3 @@
-
-
-
 function save() {
     const nome = document.getElementById("nome").value;
     const username = document.getElementById("username").value;
