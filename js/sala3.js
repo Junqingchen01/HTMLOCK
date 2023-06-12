@@ -61,7 +61,8 @@ const questions = [
     const Openedsala3 = localStorage.getItem("Openedsala3");
     if (Openedsala3 === "true"  || OpenDoor === true) {
         OutDoor.style.backgroundColor = "green";
-      alert("WIN!");
+        alert("WIN!");
+        location.href='win.html';
 
         // final page
     //   location.href='sala1.html'

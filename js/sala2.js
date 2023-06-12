@@ -1,3 +1,4 @@
+// 题目
 const questions = [
     {
       text: "What tag is used to define a table CELL in HTML?",
@@ -24,6 +25,7 @@ let NumeroKey = 0;
 console.log("key" + NumeroKey);
 let timeLeft = 200;
 
+// Get all the necessary elements
 const sala1 = document.querySelector(".sala1");
 
 const key = document.querySelector(".key");

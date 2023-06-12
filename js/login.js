@@ -1,6 +1,6 @@
 import { UserManager } from './user.js';
-
-const userManager = new UserManager();
+// 登入效果，具体在user，js里
+const userManager =  new UserManager();
 
 const Loginbtn = document.getElementById('Loginbtn')
 Loginbtn.onclick = Login;
@@ -11,6 +11,3 @@ function Login() {
   userManager.login(username, password);
 }
 
-function register(){
-
-}

@@ -6,6 +6,7 @@ const registerbtn = document.getElementById('registerbtn');
 registerbtn.onclick = register;
 
 function register() {
+  //获取html里用户输入的value
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const nome = document.getElementById("nome").value;
@@ -25,7 +26,7 @@ function register() {
     email: email,
     timewin: timewin,
 };
-
+  //用localStorage列出所有用户，当新用户注册成功后，新用户的名字会添加到localStorage里
   userManager.addUser(user);
   console.log(userManager.users.map(user => user.nome));
   

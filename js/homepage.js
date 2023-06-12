@@ -1,5 +1,7 @@
+//读取登入的用户休息
 let Userlogado = localStorage.getItem("UserLogado");
 
+//确认登入的用户是否是admin
 function ifAdmin(){
     if (Userlogado === 'Admin'){
         const GerirAluno = document.querySelector("#GerirAluno");
@@ -9,7 +11,7 @@ function ifAdmin(){
     }
 }
 
-
+//确认登入了没有
 function ifLogin(){
     let Userlogado = localStorage.getItem("UserLogado");
     if(!Userlogado){
@@ -23,11 +25,13 @@ function ifLogin(){
     }
 }
 
+//按钮
 function start(){
     location.href = "../html/sala1.html";
 }
 
 function sair(){
+    //用户退出后会将localstorege里 已登入 的记录移除，变为没有登入状态。
     localStorage.removeItem("UserLogado");
     alert("You are offline now !");
     ifLogin();

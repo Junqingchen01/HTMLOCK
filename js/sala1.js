@@ -1,4 +1,4 @@
-
+// 题目
 const questions = [
   {
     text: "What tags do HTML elements start and end with?",
@@ -19,7 +19,8 @@ const questions = [
 
 
 let question
-console.log("Number of questions: "+questions.length)
+
+// console.log("Number of questions: "+questions.length)
 
 // Get all the necessary elements
 const sala2 = document.querySelector(".sala2");
@@ -36,13 +37,11 @@ const dica = document.querySelector(".dica");
 
 let OpenDoor = false;
 
-// count keys 
+// 记录获得的钥匙的数量
 let NumeroKey = 0;
 
-
-//count time W3S
+//倒计时效果，w3c里抄的
 let timeLeft = 200;
-
 
 var x = setInterval(function() {
   let left = --timeLeft;
@@ -57,9 +56,9 @@ var x = setInterval(function() {
 }, 1000);
 
 
-// Add event listener to the door
+// 门的点击效果
 sala2.addEventListener("click", () => {
-  // Check if the door is open
+  // 去localStorage确认门是不是开着（用户有可能返回这个房间，如果出去之后返回的话，这个门就是开着的）。
   let Opened = localStorage.getItem("Opened");
   if (Opened === "true") {
     sala2.style.backgroundColor = "green";
@@ -72,7 +71,6 @@ sala2.addEventListener("click", () => {
 });
 
 sala3.addEventListener("click", () => {
-  // Check if the door is open
   let Opened = localStorage.getItem("Opened");
   if (Opened === "true") {
     sala2.style.backgroundColor = "green";
@@ -85,17 +83,19 @@ sala3.addEventListener("click", () => {
 });
 
 
-// Add event listener to the book,  melhorar
+// 为房间里其他可以点击的物品添加点击效果
 book.addEventListener("click", handleBookClick1);
 book2.addEventListener("click", handleBookClick2);
 book3.addEventListener("click", handleBookClick3);
+
 
 dica.addEventListener("click", creatTutorial);
 
 key.addEventListener("click",checkKeys)
 
+//打开提示效果
 function creatTutorial() {
-  // Create a new dialog element
+  // 创建新的弹窗dialog内容
   alert("This weill be helpful maybe..")
   const newDialog = document.createElement("dialog");
   newDialog.classList.add("modal2");
@@ -125,9 +125,12 @@ function creatTutorial() {
   newDialog.open = true;
 }
 
+//书本的点击效果，我为每一本书都设置了一个function，名字不同但是功能一样。
 let clickbook
 function handleBookClick1() { 
 clickbook = book
+
+//用户通过这个房间之后，回到这个房间，里面的书无法被再次打开。和门一个道理。
 let Opened = localStorage.getItem("Opened")
   if(Opened === "true"){
     dialog.open = false;
@@ -159,6 +162,7 @@ let Opened = localStorage.getItem("Opened")
 }
 
 
+// 打开弹窗效果。老师的exemplo
 function renderDialog() {
 const index = Math.floor(Math.random() * questions.length);
 question = questions[index];
@@ -175,14 +179,18 @@ for (const answer of answers) {
 }
 }
 
+// 确认答案对错
 function checkSuccess(event) {
 if (event.target.value == question.solution) {
   alert("Good! you get a key !");
+  // 如果对了，获得钥匙，并且确认一下钥匙数量
   NumeroKey++;
   checkKeys()
+
+  //在左上角更新钥匙的数量，并且把答对的书的图标换了
   document.querySelector(".key").innerHTML = "Keys: " + NumeroKey;
   clickbook.style.backgroundImage = "url('../imgs/bookafter.png')"
-  //da para melhorar
+  //把这本书的点击效果去除。换上新的效果，告诉用户 已经读过这本书了（不知道怎么分辨点击的是那本书，这个方法比较笨比）
   clickbook.removeEventListener("click", handleBookClick1);
   clickbook.removeEventListener("click", handleBookClick2);
   clickbook.removeEventListener("click", handleBookClick3);
@@ -198,32 +206,40 @@ dialog.querySelector("form").reset();
 dialog.close();
 }
 
+//检查钥匙数量
 function checkKeys(){
+// 如果钥匙数量等于问题数量  
 if(NumeroKey === questions.length){
 
-  // marcar o resto tempo para registar no perfil de user para entrar o rank
+  // 记录剩余的时间
   let timewin1 = 0;
   timewin1+= timeLeft;
   console.log("time win in sala1:"+timewin1)
   localStorage.setItem("timeWin1", timewin1);
 
+  //倒计时效果清楚
   clearInterval(x);
 
   alert("Looks like I can get out of this room now..which door should i go ....")
   sala2.style.backgroundColor = "green";
   sala3.style.backgroundColor = "green";
-
+  //记录这个房间已经通过。
   OpenDoor = true;
   localStorage.setItem("Opened",true);
   // console.log("Opendoor: "+ OpenDoor)
   
-}else if(NumeroKey === 0){
+}
+//如果没有钥匙
+else if(NumeroKey === 0){
   alert("Looks like I need to keep exploring this room...  ")
-}else{
+}
+//如果钥匙数量小于问题数量
+else{
   alert("Looks like i need more keys to get out this room...")
 }
 }
 
+//关闭弹窗效果
 const close = document.querySelector("#closeDialog");
 close.addEventListener("click",closeDialog);
 
@@ -231,6 +247,8 @@ function closeDialog(){
 dialog.open = false
 }
 
+
+//用户进入页面时候，如果localStorage的记录里有通关记录（回到这个房间），门会直接变绿打开
 function welcome(){
   let Opened = localStorage.getItem("Opened");
   if(Opened === "true"){
@@ -239,6 +257,7 @@ function welcome(){
     clearInterval(x);
     alert('welcome again, now whice door should i select ?')
   }
+  //其他情况，用户第一次进入这个房间
   else{
     alert('welcome to 1º room, find keys and try leave the room before the time up!!')
   }
