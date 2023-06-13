@@ -46,5 +46,11 @@ function toPerfil(){
     location.href = "../html/perfil.html";
 }
 
+function toGerir(){
+    location.href = "../html/gerirAluno.html";
+}
+
+
+
 ifAdmin()
 ifLogin()

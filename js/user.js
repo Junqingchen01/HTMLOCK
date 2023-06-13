@@ -51,10 +51,13 @@ export class UserManager {
         this.users[i].username === username &&
         this.users[i].password === password
       ) {
-        
+        //登入后记录登入用户的信息
         localStorage.setItem("UserInfo", JSON.stringify(this.users[i]));
-        localStorage.setItem("UserLogado", this.users[i].nome);
 
+        //记入登入用户的名字
+        localStorage.setItem("UserLogado", this.users[i].nome);
+        
+        //记录所有在class里的用户名字
         const nomelista = this.users.map(user => user.nome);
         localStorage.setItem("usersLista", JSON.stringify(nomelista));
 
