@@ -6,7 +6,7 @@ const registerbtn = document.getElementById('registerbtn');
 registerbtn.onclick = register;
 
 function register() {
-  //获取html里用户输入的value
+  // 获取html里用户输入的value
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   const nome = document.getElementById("nome").value;
@@ -25,11 +25,34 @@ function register() {
     localidade: localidade,
     email: email,
     timewin: timewin,
-};
-  //用localStorage列出所有用户，当新用户注册成功后，新用户的名字会添加到localStorage里
-  userManager.addUser(user);
-  console.log(userManager.users.map(user => user.nome));
+  };
+
+  // 检查用户是否已经存在
+  const userExists = userManager.users.some(ExistUser => ExistUser.username === username);
+  if (userExists) {
+    alert("Neste username ja exist!!");
+    return;
+  } else {
+    // 获取已存在的NewUser组数据
+    let ExistNewUser = localStorage.getItem("NewUser");
+    if (ExistNewUser) {
+      ExistNewUser = JSON.parse(ExistNewUser);
+      // 检查NewUser组是否存在具有相同用户名的用户
+      const newUserExists = ExistNewUser.some(ExistUser => ExistUser.username === username);
+      if (newUserExists) {
+        alert("Neste username ja exist!!");
+        return;
+      }
+    } else {
+      ExistNewUser = [];
+    }
+
+    // 将新用户添加到NewUser组中
+    ExistNewUser.push(user);
+    localStorage.setItem("NewUser", JSON.stringify(ExistNewUser));
+
   
-  const nomelista = userManager.users.map(user => user.nome);
-  localStorage.setItem("usersLista", JSON.stringify(nomelista));
+
+    userManager.addUser(user);
+  }
 }

@@ -1,16 +1,23 @@
 import { UserManager } from './user.js';
 
+//从user里导入数据
 const userManager = new UserManager();
-const users = userManager.users;
+let users = userManager.users;
+
+//从localstrong里的NewUser里导入数据
+let newUsers = JSON.parse(localStorage.getItem('NewUser'));
+if (newUsers && newUsers.length > 0) {
+  users = users.concat(newUsers);
+}
 
 // 从localStorage获取当前用户的信息
-const currentUser = JSON.parse(localStorage.getItem('UserInfo'));
-const currentUserTimewin = currentUser ? currentUser.timewin : 0;
+const Userlogado = JSON.parse(localStorage.getItem('UserInfo'));
+const UserlogadoTimewin = Userlogado ? Userlogado.timewin : 0;
 
 // 在 users 数组中更新用户的 timewin
 users.forEach(user => {
-  if (user.nome === currentUser.nome) {
-    user.timewin = currentUserTimewin;
+  if (user.nome === Userlogado.nome) {
+    user.timewin = UserlogadoTimewin;
   }
 });
 
