@@ -86,7 +86,6 @@ export class UserManager {
         // 获取users类中所有用户的nome列表
         const userList = userManager.users.map(user => user.nome);
 
-<<<<<<< HEAD
         // 获取NewUser组中所有用户的nome列表
         let newUserExists = localStorage.getItem("NewUser");
         const newUsersList = newUserExists.map(newUser => newUser.nome);
@@ -96,9 +95,6 @@ export class UserManager {
 
         localStorage.setItem("usersLista", JSON.stringify(usersLista));
         alert("Login successful!");
-=======
-        alert("Login feito com sucesso");
->>>>>>> 2ea6782f8e59658c2e497112c73aba6478db6262
         location.href = "../html/homepage.html";
         return;
       }
@@ -117,12 +113,8 @@ export class UserManager {
   
     // 用户名不存在，将新用户添加到用户数组中
     this.users.push(user);
-<<<<<<< HEAD
     alert("Register successful!");
     location.href = "../html/login.html";
-=======
-    alert("Registo efetuado com sucesso");
->>>>>>> 2ea6782f8e59658c2e497112c73aba6478db6262
   }
 
   removeUser(username) {
