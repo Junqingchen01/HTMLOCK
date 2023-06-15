@@ -34,7 +34,7 @@ export class UserManager {
       },
       {
         nome: "Manu",
-        username: "user2",
+        username: "User2",
         password: "user",
         dataNascimento: "2000-0-0",
         sexo: "F",
@@ -61,26 +61,26 @@ export class UserManager {
         const nomelista = this.users.map(user => user.nome);
         localStorage.setItem("usersLista", JSON.stringify(nomelista));
 
-        alert("Login successful!");
+        alert("Login feito com sucesso");
         location.href = "../html/homepage.html";
         return;
       }
     }
-    alert("Invalid username or password. Please try again.");
+    alert("Erro no nome e na password, tenta de novo!");
   }
 
   addUser(user) {
     this.users.push(user);
-    alert("register successful!");
+    alert("Registo efetuado com sucesso");
   }
 
   removeUser(username) {
     const index = this.users.findIndex((user) => user.username === username);
     if (index !== -1) {
       this.users.splice(index, 1);
-      console.log(`User ${username} removed successfully.`);
+      console.log(`User ${username} removido.`);
     } else {
-      console.log(`User ${username} not found.`);
+      console.log(`User ${username} nao encontrado.`);
     }
   }
 }

@@ -1,18 +1,18 @@
 const questions = [
     {
-      text: "What tags do HTML elements start and end with?",
-      answers: ['start, /end', 'start, /stop', 'start, /start'],
-      solution: 2
-    },
-    {
-      text: "O que constitui um documento HTML?",
-      answers: ['Elementos HTML aninhados uns nos outros', 'Estilos CSS independentes', 'Elementos HTML separados'],
+      text: "A tag <img precisa de ser fechada?",
+      answers: ['Sim', 'Nao sei', 'Não'],
       solution: 0
     },
     {
-      text: "As tags HTML diferenciam maiúsculas de minúsculas?",
-      answers: ['Sim', 'Nao sei', 'Não'],
-      solution: 2
+      text: "Qual o atributo que vais buscar o url do vídeo?",
+      answers: ['css', 'src', 'vid'],
+      solution: 1
+    },
+    {
+      text: "É obrigatorio uitlizar o atributo controls?",
+      answers: ['Sim', 'Não'],
+      solution: 1
     }
   ];
   
@@ -50,7 +50,7 @@ const questions = [
     if (left < 0) {
       clearInterval(x);
       document.querySelector(".time").innerHTML = "0s";
-      alert("TIME UP! PLEASE TRY AGAIN !");
+      alert("ACABOU O TEU TEMPO! TENTA DE NOVO!!");
       location.href='homepage.html';
     }
   }, 1000);
@@ -65,9 +65,9 @@ const questions = [
         location.href='win.html';
 
         // final page
-    //   location.href='sala1.html'
+    //   location.href='sala3.html'
     } else {
-      alert("Find the keys!!");
+      alert("Encontra as chaves!");
     }
 });
 
@@ -83,7 +83,7 @@ const questions = [
   
   function creatTutorial() {
     // Create a new dialog element
-    alert("This weill be helpful maybe..")
+    alert("Isto vai de ajudar, secalhar...")
     const newDialog = document.createElement("dialog");
     newDialog.classList.add("modal2");
     newDialog.innerHTML = `
@@ -163,7 +163,7 @@ const questions = [
   
   function checkSuccess(event) {
   if (event.target.value == question.solution) {
-    alert("Good! you get a key !");
+    alert("Boa! Recebeste uma chave!");
     NumeroKey++;
     checkKeys()
     document.querySelector(".key").innerHTML = "Keys: " + NumeroKey;
@@ -178,7 +178,7 @@ const questions = [
     });
   
   } else {
-    alert("False, try again !");
+    alert("Tenta de novo");
   }
   dialog.querySelector("form").reset();
   dialog.close();
@@ -190,12 +190,12 @@ const questions = [
     // marcar o resto tempo para registar no perfil de user para entrar o rank
     let timewin3 = 0;
       timewin3+= timeLeft;
-      console.log("time win in sala3:"+timewin3)
+      console.log("Tempo gasto na sala3:"+timewin3)
       localStorage.setItem("timeWin3", timewin3);
   
     clearInterval(x);
   
-    alert("Looks like I can get out of this room now..which door should i go ....")
+    alert("Podes explorar para qual sala queres ir....")
     OutDoor.style.backgroundColor = "green";
 
   
@@ -204,9 +204,9 @@ const questions = [
     // console.log("Opendoor: "+ OpenDoor)
     
   }else if(NumeroKey === 0){
-    alert("Looks like I need to keep exploring this room...  ")
+    alert("Pelos vistos ainda precisas de explorar...")
   }else{
-    alert("Looks like i need more keys to get out this room...")
+    alert("Achamos que ainda precisas de algo para sair...")
   }
   }
   
@@ -224,7 +224,7 @@ const questions = [
       
     }
     else{
-        alert('welcome to 3º room, that is last room! find keys and try leave the room before the time up!!')
+        alert('Bem vindo a sala 3! Tenta encontrar as chaves e escapar da sala!')
     }
   }
   
