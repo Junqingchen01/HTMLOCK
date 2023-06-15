@@ -1,8 +1,8 @@
 const questions = [
     {
-      text: "A tag <img precisa de ser fechada?",
-      answers: ['Sim', 'Nao sei', 'Não'],
-      solution: 0
+      text: "Qual o melhor input para o nome de uma pessoa?",
+      answers: ['name', 'texto', 'text'],
+      solution: 2
     },
     {
       text: "Qual o atributo que vais buscar o url do vídeo?",
