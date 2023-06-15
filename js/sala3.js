@@ -1,8 +1,14 @@
 const questions = [
     {
+<<<<<<< HEAD
       text: "A tag img precisa de ser fechada?",
       answers: ['Sim', 'Nao sei', 'Não'],
       solution: 0
+=======
+      text: "Qual o melhor input para o nome de uma pessoa?",
+      answers: ['name', 'texto', 'text'],
+      solution: 2
+>>>>>>> bbd7d20dfb12f6a6455828f85b3cf8c5f02d4a56
     },
     {
       text: "Qual o atributo que vais buscar o url do vídeo?",
