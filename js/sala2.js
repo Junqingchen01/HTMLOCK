@@ -1,17 +1,17 @@
 // 题目
 const questions = [
     {
-      text: "What tag is used to define a table CELL in HTML?",
+      text: "Qual a tag que define a table CELL em HTML?",
       answers: ["td", "tr", "th"],
       solution: 0
     },
     {
-      text: "Which tag is used to define a table ROW in HTML?",
+      text: "Qual a tag que define uma table ROW em HTML?",
       answers: ["td", "tr", "th"],
       solution: 1
     },
     {
-      text: "What tag is used to define a table HEADER CELL in HTML?",
+      text: "Qual a tag que define uma table HEADER em HTML?",
       answers: ["td", "tr", "th"],
       solution: 2
     }
@@ -45,7 +45,7 @@ var x = setInterval(function() {
     if (left < 0) {
       clearInterval(x);
       document.querySelector(".time").innerHTML = "0s";
-      alert("TIME UP! PLEASE TRY AGAIN !");
+      alert("ACABOU O TEU TEMPO! TENTA DE NOVO!!");
       location.href='homepage.html';
     }
   }, 1000);
@@ -68,13 +68,13 @@ sala1.addEventListener("click", () => {
       alert("Vai entrar sala1...");
       location.href='sala1.html'
     } else {
-      alert("ENCONTRA PRIMEIRO A CHAVE!!");
+      alert("NAO PODES SEGUIR PARA A SEGUINTE SALA AINDA!");
     }
 });
 
 function creatTutorial() {
     // Create a new dialog element
-    alert("This weill be helpful maybe..")
+    alert("Isto vai te ajudar, secalhar...")
     const newDialog = document.createElement("dialog");
     newDialog.classList.add("modal2");
     newDialog.innerHTML = `
@@ -167,11 +167,11 @@ function creatTutorial() {
       clickbook.removeEventListener("click", handleBookClick3);
     
       clickbook.addEventListener("click", () => {
-        alert("I dont need it too much!");
+        alert("Nao e preciso tanto");
       });
     
     } else {
-      alert("False, try again");
+      alert("Tenta de novo!");
     }
     dialog.querySelector("form").reset();
     dialog.close();
@@ -184,19 +184,19 @@ function creatTutorial() {
 
       let timewin2 = 0;
       timewin2+= timeLeft;
-      console.log("time win in sala2:"+timewin2)
+      console.log("Tempo gasto na sala2:"+timewin2)
       localStorage.setItem("timeWin2", timewin2);
 
       clearInterval(x);
-      alert("Looks like I can get out of this room now..which door should i go ....")
+      alert("Estas de livre de escolher...")
       sala1.style.backgroundColor = "green";
       OpenDoor = true;
       localStorage.setItem("Openedsala2",true);
       
     }else if(NumeroKey === 0){
-      alert("Looks like I need to keep exploring this room...  ")
+      alert("Pelos vistos ainda precisas de explorar...")
     }else{
-      alert("Looks like i need more keys to get out this room...")
+      alert("Achamos que ainda precisas de algo para sair...")
     }
     }
     
@@ -214,10 +214,10 @@ function creatTutorial() {
         sala1.style.backgroundColor = "green";
         
         clearInterval(x);
-        alert('welcome again,looks i cant get out by this room, have to find out other way')
+        alert('Bem vindo de novo! Acho que andaste por aqui!')
       }
       else{
-        alert('welcome to 2º room, find keys and try leave the room before the time up!!')
+        alert('Bem vindo a sala 2! Tenta encontrar as chaves e escapar da sala!')
       }
     }
     

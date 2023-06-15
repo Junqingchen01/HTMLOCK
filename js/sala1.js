@@ -1,7 +1,7 @@
 // 题目
 const questions = [
   {
-    text: "What tags do HTML elements start and end with?",
+    text: "Quais sao as tags de começo e de finalizar?",
     answers: ['start, /end', 'start, /stop', 'start, /start'],
     solution: 2
   },
@@ -11,7 +11,7 @@ const questions = [
     solution: 0
   },
   {
-    text: "As tags HTML diferenciam maiúsculas de minúsculas?",
+    text: "As tags HTML diferenciam de maiúsculas ou minúsculas?",
     answers: ['Sim', 'Nao sei', 'Não'],
     solution: 2
   }
@@ -50,7 +50,7 @@ var x = setInterval(function() {
   if (left < 0) {
     clearInterval(x);
     document.querySelector(".time").innerHTML = "0s";
-    alert("TIME UP! PLEASE TRY AGAIN !");
+    alert("ACABOU O TEU TEMPO! TENTA DE NOVO!!");
     location.href='homepage.html';
   }
 }, 1000);
@@ -63,10 +63,10 @@ sala2.addEventListener("click", () => {
   if (Opened === "true") {
     sala2.style.backgroundColor = "green";
     sala3.style.backgroundColor = "green";
-    alert("Vai entrar sala2...");
+    alert("Vai entrar na sala2...");
     location.href='sala2.html'
   } else {
-    alert("I CANT OPENT THIS DOOR NOW !!");
+    alert("NAO PODES SEGUIR PARA A SEGUINTE SALA AINDA!");
   }
 });
 
@@ -75,10 +75,10 @@ sala3.addEventListener("click", () => {
   if (Opened === "true") {
     sala2.style.backgroundColor = "green";
     sala3.style.backgroundColor = "green";
-    alert("Vai entrar sala3...");
+    alert("Vai entrar na sala3...");
     location.href='sala3.html'
   } else {
-    alert("I CANT OPENT THIS DOOR NOW !!");
+    alert(" NAO PODES SEGUIR PARA A SEGUINTE SALA AINDA!");
   }
 });
 
@@ -96,7 +96,7 @@ key.addEventListener("click",checkKeys)
 //打开提示效果
 function creatTutorial() {
   // 创建新的弹窗dialog内容
-  alert("This weill be helpful maybe..")
+  alert("Isto vai de ajudar, secalhar...")
   const newDialog = document.createElement("dialog");
   newDialog.classList.add("modal2");
   newDialog.innerHTML = `
@@ -134,7 +134,7 @@ clickbook = book
 let Opened = localStorage.getItem("Opened")
   if(Opened === "true"){
     dialog.open = false;
-    alert("This book is done, I have to find others...");
+    alert("This book is done, You have to find others...");
 }else{
   renderDialog();
 }
@@ -145,7 +145,7 @@ clickbook = book2
 let Opened = localStorage.getItem("Opened")
   if(Opened === "true"){
     dialog.open = false;
-    alert("This book is done, I have to find others...");
+    alert("This book is done, You have to find others...");
 }else{
   renderDialog();
 }
@@ -155,7 +155,7 @@ clickbook = book3
 let Opened = localStorage.getItem("Opened")
   if(Opened === "true"){
     dialog.open = false;
-    alert("This book is done, I have to find others...");
+    alert("This book is done, You have to find others...");
 }else{
   renderDialog();
 }
@@ -182,7 +182,7 @@ for (const answer of answers) {
 // 确认答案对错
 function checkSuccess(event) {
 if (event.target.value == question.solution) {
-  alert("Good! you get a key !");
+  alert("Boa! Recebeste uma chave");
   // 如果对了，获得钥匙，并且确认一下钥匙数量
   NumeroKey++;
   checkKeys()
@@ -196,11 +196,11 @@ if (event.target.value == question.solution) {
   clickbook.removeEventListener("click", handleBookClick3);
 
   clickbook.addEventListener("click", () => {
-    alert("This book is done, i have to find others... ");
+    alert("This book is done, You have to find others... ");
   });
 
 } else {
-  alert("False, try again !");
+  alert("Tenta de novo!");
 }
 dialog.querySelector("form").reset();
 dialog.close();
@@ -214,13 +214,13 @@ if(NumeroKey === questions.length){
   // 记录剩余的时间
   let timewin1 = 0;
   timewin1+= timeLeft;
-  console.log("time win in sala1:"+timewin1)
+  console.log("Tempo gasto na sala1:"+timewin1)
   localStorage.setItem("timeWin1", timewin1);
 
   //倒计时效果清楚
   clearInterval(x);
 
-  alert("Looks like I can get out of this room now..which door should i go ....")
+  alert("Estas livre de escolher...")
   sala2.style.backgroundColor = "green";
   sala3.style.backgroundColor = "green";
   //记录这个房间已经通过。
@@ -231,11 +231,11 @@ if(NumeroKey === questions.length){
 }
 //如果没有钥匙
 else if(NumeroKey === 0){
-  alert("Looks like I need to keep exploring this room...  ")
+  alert("Pelos vistos ainda precisas de explorar...")
 }
 //如果钥匙数量小于问题数量
 else{
-  alert("Looks like i need more keys to get out this room...")
+  alert("Achamos que ainda precisas de algo para sair...")
 }
 }
 
@@ -255,11 +255,11 @@ function welcome(){
     sala2.style.backgroundColor = "green";
     sala3.style.backgroundColor = "green";
     clearInterval(x);
-    alert('welcome again, now whice door should i select ?')
+    alert('Bem vindo de novo! Por onde devo ir?')
   }
   //其他情况，用户第一次进入这个房间
   else{
-    alert('welcome to 1º room, find keys and try leave the room before the time up!!')
+    alert('Bem vindo a sala 1! Tenta encontrar as chaves e escapar da sala!')
   }
 }
 welcome()

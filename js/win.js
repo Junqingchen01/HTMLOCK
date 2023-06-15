@@ -22,6 +22,15 @@ userInfo.timewin = alltimewin;
 localStorage.setItem("UserInfo", JSON.stringify(userInfo));
 alert(`Congratulations on passing! your grades ${alltimewin} is credit to profile!`)
 
+<<<<<<< HEAD
+=======
+  //在登入的用户资料里修改 胜利的时间
+  const userInfo = JSON.parse(localStorage.getItem("UserInfo"));
+  userInfo.timewin = alltimewin;
+  localStorage.setItem("UserInfo", JSON.stringify(userInfo));
+  alert(`Parabens por teres passado! ${alltimewin} isto e um emblema para o teu perfil!`)
+}
+>>>>>>> 2ea6782f8e59658c2e497112c73aba6478db6262
 
 //按钮，用来检查个人资料里的时间是否被修改
 const perfilbtn = document.getElementById('goPerfil');
