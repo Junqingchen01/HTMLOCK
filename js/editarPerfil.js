@@ -24,6 +24,7 @@ function save() {
         //新资料保存在localStrage里。
         localStorage.setItem("UserInfo", JSON.stringify(userInfo));
         alert("save succes!!");
+        location.href = "../html/perfil.html";
     }else{
         //如果没有输入所有的资料，就不能修改
         alert('save insucces!')

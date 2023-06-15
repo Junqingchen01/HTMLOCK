@@ -57,18 +57,6 @@ export class UserManager {
         localStorage.setItem("UserInfo", JSON.stringify(newUserExists));
 
         localStorage.setItem("UserLogado", newUserExists.nome);
-
-         // 获取users类中所有用户的nome列表
-        const userList = userManager.users.map(user => user.nome);
-
-        // 获取NewUser组中所有用户的nome列表
-        const newUsersList = ExistNewUser.map((newUserExists) => newUserExists.nome);
-
-        // 合并users类和NewUser组的nome列表
-        const usersLista = userList.concat(newUsersList);
-
-        localStorage.setItem("usersLista", JSON.stringify(usersLista));
-
         alert("Login successful!");
         location.href = "../html/homepage.html";
         return;
@@ -80,20 +68,8 @@ export class UserManager {
       ) {
         //登入后记录登入用户的信息
         localStorage.setItem("UserInfo", JSON.stringify(this.users[i]));
-
         //记入登入用户的名字
         localStorage.setItem("UserLogado", this.users[i].nome);
-        // 获取users类中所有用户的nome列表
-        const userList = userManager.users.map(user => user.nome);
-
-        // 获取NewUser组中所有用户的nome列表
-        let newUserExists = localStorage.getItem("NewUser");
-        const newUsersList = newUserExists.map(newUser => newUser.nome);
-
-        // 合并users类和NewUser组的nome列表
-        const usersLista = userList.concat(newUsersList);
-
-        localStorage.setItem("usersLista", JSON.stringify(usersLista));
         alert("Login successful!");
         location.href = "../html/homepage.html";
         return;

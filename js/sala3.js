@@ -1,6 +1,6 @@
 const questions = [
     {
-      text: "A tag <img precisa de ser fechada?",
+      text: "A tag img precisa de ser fechada?",
       answers: ['Sim', 'Nao sei', 'Não'],
       solution: 0
     },
@@ -11,7 +11,7 @@ const questions = [
     },
     {
       text: "É obrigatorio uitlizar o atributo controls?",
-      answers: ['Sim', 'Não'],
+      answers: ['Sim', 'Não','Não sei'],
       solution: 1
     }
   ];
