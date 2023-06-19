@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; 
+}
+  
+h1 {
+    font-size: 48px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    color:red;
+}
+  
+#EditarTable {
+    width: 500px;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden; 
+    margin-bottom: 16px; 
+}
+  
+#EditarTable td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+  
+#EditarTable input[type="text"],
+#EditarTable input[type="date"],
+#EditarTable select {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 14px; 
+}
+  
+
+ #savebtn {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 110px; 
+}
+  

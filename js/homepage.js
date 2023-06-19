@@ -32,7 +32,7 @@ function start(){
 
 function sair(){
     //用户退出后会将localstorege里 已登入 的记录移除，变为没有登入状态。
-    localStorage.removeItem("UserLogado");
+    localStorage.clear()
     alert("You are offline now !");
     ifLogin();
 }

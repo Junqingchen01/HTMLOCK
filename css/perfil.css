@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; 
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    color:red;
+  }
+  
+  #perfilTable {
+    width: 400px;
+    border-collapse: collapse;
+    border-radius: 10px; 
+    overflow: hidden; 
+  }
+  
+  #perfilTable td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center; 
+  }
+  
+  #perfilTable th,
+  #perfilTable td {
+    border-width: 2px; 
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 16px; 
+    margin-top: 16px;
+  }
+  
+ 
+  #editar,
+  #rank {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 110px; 
+
+  }
+  

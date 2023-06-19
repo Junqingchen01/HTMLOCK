@@ -11,6 +11,7 @@ const table = document.querySelector('table');
 // 创建表格内容
 const tbody = document.createElement('tbody');
 users.forEach((user) => {
+  
     //创建tr，
   const tr = document.createElement('tr');
     //创建内容命名
@@ -44,9 +45,9 @@ users.forEach((user) => {
     userManager.removeUser(user.username);
     tr.remove();
 
-    const usersLista = JSON.parse(localStorage.getItem("usersLista"));
-    const updatedUsersLista = usersLista.filter((nome) => nome !== user.nome);
-    localStorage.setItem("usersLista", JSON.stringify(updatedUsersLista));
+  const usersLista = JSON.parse(localStorage.getItem("usersLista"));
+  const updatedUsersLista = usersLista.filter((nome) => nome !== user.nome);
+  localStorage.setItem("usersLista", JSON.stringify(updatedUsersLista));
   
   });
   tdButton.appendChild(removeButton);
