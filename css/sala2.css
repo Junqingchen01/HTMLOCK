@@ -11,6 +11,9 @@
     position: relative;
     margin: 50px auto;
     background-color: #000000;
+    background-image: url(../imgs/rback.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .sala1 {
@@ -18,7 +21,7 @@
     height: 100px;
     background: red;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
@@ -104,11 +107,10 @@
     height: 200px;
     z-index: 999;
   }
-
   #text{
     text-align: center;
     color: white;
-    font-size: 25px;
+    font-size: 30px;
   }
 
   #title{
@@ -120,7 +122,9 @@
     text-align: center;
     color:white;
     bottom: 20%;
+    font-size: 20px;
   }
+
 
   #closeDialog{
     position: absolute;

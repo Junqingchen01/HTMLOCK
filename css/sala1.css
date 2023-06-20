@@ -122,7 +122,7 @@
   #text{
     text-align: center;
     color: white;
-    font-size: 25px;
+    font-size: 30px;
   }
 
   #title{
@@ -134,6 +134,7 @@
     text-align: center;
     color:white;
     bottom: 20%;
+    font-size: 20px;
   }
 
   #closeDialog{

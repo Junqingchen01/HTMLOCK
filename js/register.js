@@ -16,6 +16,12 @@ function register() {
   const email = document.getElementById("email").value;
   const timewin = 0;
 
+  // 检查输入是否为空
+  if (!username || !password || !nome || !dataNascimento || !sexo || !localidade || !email) {
+    alert("Por favor, preencha todos os campos!");
+    return;
+  }
+
   const user = {
     nome: nome,
     username: username,
@@ -50,8 +56,6 @@ function register() {
     // 将新用户添加到NewUser组中
     ExistNewUser.push(user);
     localStorage.setItem("NewUser", JSON.stringify(ExistNewUser));
-
-  
 
     userManager.addUser(user);
   }
