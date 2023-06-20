@@ -32,3 +32,8 @@ function save() {
     }
     
 }
+
+const backtoPerfil = document.getElementById('backbtn');
+backtoPerfil.addEventListener("click",()=>{
+    location.href='perfil.html';
+});
