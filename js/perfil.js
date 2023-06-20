@@ -31,3 +31,8 @@ const rankbtn = document.getElementById('rank');
 rankbtn.addEventListener("click",()=>{
     location.href='rank.html';
 });
+
+const homepagebtn = document.getElementById('Homepage');
+homepagebtn.addEventListener("click",()=>{
+    location.href='homepage.html';
+});

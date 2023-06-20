@@ -1,25 +1,29 @@
-/* 将页面内容居中 */
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column; /* 垂直方向布局 */
+    flex-direction: column; 
+    background-color: #040303;
+    background-image: url(../imgs/Homepage_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
-  
-  /* 放大标题并设置上下边距 */
+
     
   h1 {
     font-size: 48px;
     margin-top: 16px;
     margin-bottom: 16px;
-    color:red;
+    color: white;
   }
   
-  /* 调整排行榜列表样式 */
+
   #rankList {
     width: 400px;
-    margin-bottom: 16px; /* 底部边距 */
+    margin-bottom: 16px;
+    color: white;
   }
   
   #rankList li {
@@ -28,7 +32,7 @@ body {
     margin-bottom: 8px;
   }
   
-  /* 调整按钮样式 */
+
   button {
     padding: 8px 16px;
     font-size: 16px;

@@ -3,14 +3,14 @@
     width: 634px;
     height: 155px;
     left: 600px;
-    top: 127px;
+    top: 230px;
     width: 634px;
     font-size: 80px;
     display: flex;
     align-items: center;
     text-align: center;
 
-    color: #A13333;
+    color: white;
 }
 
 .loginbtn{
@@ -30,4 +30,8 @@
 
 body{
     background-color: #040303;
+    background-image: url(../imgs/Homepage_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }

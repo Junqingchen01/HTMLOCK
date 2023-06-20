@@ -1,0 +1,13 @@
+body{
+    background-color: #040303;
+    background-image: url(../imgs/Homepage_back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.welcome{
+    width: 634px;
+    height: 155px;
+    font-size: 80px;
+    color: white;
+}

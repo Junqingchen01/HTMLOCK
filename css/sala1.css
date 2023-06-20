@@ -11,6 +11,9 @@
     position: relative;
     margin: 50px auto;
     background-color: #000000;
+    background-image: url(../imgs/rback.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   .sala2 {
