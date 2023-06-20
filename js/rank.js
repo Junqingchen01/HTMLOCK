@@ -31,6 +31,6 @@ rankList.innerHTML = '';
 // 实现效果
 users.forEach((user, index) => {
   const li = document.createElement('li');
-  li.innerHTML = `Rank ${index + 1}: <span class="timewin"> ${user.nome}</span> TEMPO GANHA: <span class="timewin">${user.timewin}</span> S.`;
+  li.innerHTML = `Rank ${index + 1}: <span class="timewin"> ${user.nome}</span> PONTOS GANHOS: <span class="timewin">${user.timewin}</span> S.`;
   rankList.appendChild(li);
 });
